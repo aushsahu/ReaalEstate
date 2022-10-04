@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+
+<body>
+    <div id="container">
+        {{>navbar}}
+        <div id="house"></div>
+        {{#each house}}
+        <div class="more-featured-box">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {{#each this.Images}}
+                    <div class="swiper-slide"><img src="{{this.HouseImg}}" alt="Property image"></div>
+                    {{/each}}
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="secondary-featured-box">
+                <ul>
+                    <li><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i> {{this.Price}}</li>
+                    <li><i class="fa-sharp fa-solid fa-door-open"></i> {{this.Bedroom}} Bedroom</li>
+                    <li><i class="fa-sharp fa-solid fa-toilet"></i> {{this.Bathroom}} Bathroom</li>
+                    <li><i class="fa-solid fa-fire-burner"></i> {{this.Kitchen}} Kitchen</li>
+                    <li><i class="fa-sharp fa-solid fa-square"></i> {{this.SquareFt}} Sq Ft</li>
+                </ul>
+                <h4 class="address"><i class="fa-solid fa-location-dot"></i> {{this.Address}}</h4>
+                <p class="about-property">{{this.PropertyDetail}}</p>
+            </div>
+        </div>
+        {{/each}}
+
+        <div id="plot"></div>
+        {{#each plot}}
+        <div class="more-featured-box">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {{#each this.Images}}
+                    <div class="swiper-slide"><img src="{{this.PlotImg}}" alt="Property image"></div>
+                    {{/each}}
+
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="secondary-featured-box">
+                <div class="span-div">
+                    <span><i class="fa-sharp fa-solid fa-indian-rupee-sign"></i> {{this.Price}}</span>
+                    <span><i class="fa-sharp fa-solid fa-square"></i> {{this.SquareFt}} Sq Ft</span>
+                </div>
+                <h4 class="address"><i class="fa-solid fa-location-dot"></i> {{this.Address}}</h4>
+                <p class="about-property">{{this.PropertyDetail}}</p>
+            </div>
+        </div>
+        {{/each}}
+        <div class="btns-cont">
+            <div class="btnSubCont">
+                <a href="#plot"><button class="plot-house-btn">Plot</button></a>
+                <a href="#house"><button class="plot-house-btn">House</button></a>
+            </div>
+        </div>
+        {{>footer}}
+    </div>
+    <script src="/script/navbar-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetwautoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            }, een: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>

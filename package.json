@@ -1,0 +1,19 @@
+{
+  "name": "neeraj-sahu",
+  "version": "1.0.0",
+  "description": "\"This is a website for buying house and plot in Chhattisgarh ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.js -e js,hbs"
+  },
+  "author": "Ayush Sahu",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.6.1",
+    "nodemon": "^2.0.19"
+  }
+}

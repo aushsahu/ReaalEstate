@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>head}}
+
+<body>
+    <div id="container">
+        {{!-- ----NAVBAR START---- --}}
+        {{>navbar}}
+        {{!-- ----NAVBAR END---- --}}
+
+        {{!-- ----HOME START---- --}}
+        <main id="home">
+            <div id="home-content">
+                <h1>Hello, Welcome To <span>Chhattisgarh Property</span>,</h1>
+                <p>Get Your Dream House In <span class="change-content"></span>, Chhattisgarh</p>
+            </div>
+            <div class="social-media-logo" data-aos="fade-left">
+                <div class="social-links"><a href="https://www.facebook.com/neeraj.sahu.733" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a></div>
+                <div class="social-links"><a href="https://www.instagram.com/neerajsahu07/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a></div>
+                <div class="social-links"><a href="https://twitter.com/Neerajsahu07?t=cvDBEiymbHxR3l2fYuHpjA&s=08"
+                        target="_blank"><i class="fa-brands fa-twitter"></i></a></div>
+                <div class="social-links"><a href="https://wa.me/919907208070" target="_blank"><i
+                            class="fa-brands fa-whatsapp"></i></a></div>
+            </div>
+        </main>
+        {{!-- ----HOME END---- --}}
+
+        {{!-- ----FEATURED SECTION START---- --}}
+
+        <section id="featured-section"  data-aos="fade-left">
+            <h1><span class="span-1">Featured</span> <span class="span-2">Properties</span></h1>
+            <div class="featured-box">
+                {{#each featured}}
+                <div class="box">
+                    <img src="{{this.imageUrl}}" alt="image" class="image">
+                    <div class="details">
+                        <div class="left-box">
+                            <h4>₹ {{this.price}}</h4>
+                            <p>{{this.location}}</p>
+                            <p>{{this.landmark}}</p>
+                            <h4>✆ {{this.contactNo}}</h4>
+                        </div>
+                        <div class="right-box">
+                            <p>&bull; {{this.squareFt}} sq ft</p>
+                            <p>&bull; {{this.bedroom}} Bedroom</p>
+                            <p>&bull; {{this.bathroom}} Bathroom</p>
+                            <p>&bull; {{this.kitchen}} Kitchen </p>
+                        </div>
+                    </div>
+                    <a href="#contact-section-location"><button class="enquary-btn">Enquary Now</button></a>
+                </div>
+                {{/each}}
+            </div>
+            <div><a class="btn" href="/fea">More&#8594;</a></div>
+        </section>
+        {{!-- ----FEATURED SECTION END---- --}}
+
+        {{!-- ----ABOUT SECTION START---- --}}
+        <span id="about-section-location"></span>
+        <section id="about-section" data-aos="fade-right">
+            <img src="{{about.AboutImg}}" alt="Owner image">
+            <div class="about-content">
+                <span>About Us</span>
+                <p>
+                    {{about.AboutUs}}
+                </p>
+            </div>
+        </section>
+        {{!-- ----ABOUT SECTION END---- --}}
+
+        {{!-- ----CONTACT SECTION START---- --}}
+        <span id="contact-section-location"></span>
+        <section id="contact-section" data-aos="fade-left">
+            <form name="submit-to-google-sheet">
+                <h2><span>Contact Us ?</span> Tell us a bit about yourself and we will get in touch as soon as we can.
+                </h2>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" name="Name" id="name" placeholder="Enter Your Name">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="Email" id="email" placeholder="Enter Your Email">
+                </div>
+                <div>
+                    <label for="contact">Contact number:</label>
+                    <input type="number" name="Contact" id="contact" placeholder="Enter Your Contact Number">
+                </div>
+                <div>
+                    <label for="message"> Any Message ?:</label>
+                    <input type="textarea" name="Message" id="message" placeholder="Any Message ?">
+                </div>
+                <div>
+                    <button class="btn">Submit</button>
+                </div>
+            </form>
+        </section>
+        {{!-- ----CONTACT SECTION END---- --}}
+
+        {{!-- ----FOOTER START---- --}}
+        {{>footer}}
+        {{!-- ----FOOTER END---- --}}
+    </div>
+
+    <script src="/script/script.js"></script>
+    <script src="/script/form-script.js"></script>
+    <script src="/script/navbar-script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
